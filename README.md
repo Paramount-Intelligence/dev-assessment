@@ -2,7 +2,7 @@
 
 Welcome to the **Intern Tracker** project!
 
-This is a take-home assessment where you will build a full-stack application using the **MERN stack** (MongoDB, Express, React, Node). The goal is to create a basic CRUD app where you can manage and track intern data.
+This is where you will build a full-stack application using the **MERN stack** (MongoDB, Express, React, Node). The goal is to create a basic CRUD app where you can manage and track intern data.
 
 ### Functional Requirements
 
