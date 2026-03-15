@@ -2,8 +2,6 @@
 
 A full stack MERN application designed to manage and track intern records through their lifecycle. The system provides a centralized interface to create, manage, update, and evaluate intern data while supporting search, filtering, and pagination for efficient data handling.
 
-This project demonstrates a production-style CRUD architecture using MongoDB, Express, React, and Node.js.
-
 ---
 
 # Project Outcome
@@ -12,14 +10,12 @@ The application enables organizations to manage intern information through a str
 
 Key outcomes include:
 
-• Centralized storage of intern records in a MongoDB database  
-• RESTful API for managing intern data  
-• Responsive frontend dashboard for interacting with intern records  
-• Full CRUD functionality including create, update, delete, and retrieve operations  
-• Efficient data navigation using search, filters, and pagination  
-• Input validation and error handling to ensure data integrity  
-
-The system simplifies intern data management and provides a scalable structure for tracking recruitment and evaluation processes.
+- Centralized storage of intern records in a MongoDB database
+- RESTful API for managing intern data
+- Responsive frontend dashboard for interacting with intern records
+- Full CRUD functionality including create, update, delete, and retrieve operations
+- Efficient data navigation using search, filters, and pagination
+- Input validation and error handling to ensure data integrity
 
 ---
 
@@ -27,15 +23,14 @@ The system simplifies intern data management and provides a scalable structure f
 
 The project follows a standard MERN architecture.
 
-Client Layer  
+Client Layer
 React based frontend providing the user interface.
 
-Application Layer  
+Application Layer
 Node.js and Express server exposing RESTful APIs.
 
-Data Layer  
+Data Layer
 MongoDB database accessed through Mongoose models.
-
 ```
 React (Frontend)
        │
@@ -56,10 +51,10 @@ MongoDB Database
 
 | Field | Type | Description |
 |------|------|-------------|
-| name | String | Intern full name |
+| name | String | Intern full name (min 2 characters) |
 | email | String | Unique email address |
 | role | String | Intern role (Frontend, Backend, Fullstack) |
-| status | String | Application status |
+| status | String | Application status (Applied, Interviewing, Hired, Rejected) |
 | score | Number | Evaluation score (0–100) |
 | createdAt | Date | Record creation timestamp |
 | updatedAt | Date | Record update timestamp |
@@ -68,104 +63,102 @@ MongoDB Database
 
 # Backend Features
 
-REST API built using **Node.js and Express**
+REST API built using Node.js and Express
 
 ### Endpoints
 
-POST /api/interns  
+POST /api/interns
 Create a new intern record
 
-GET /api/interns  
+GET /api/interns
 Retrieve all interns with pagination, search, and filters
 
-GET /api/interns/:id  
+GET /api/interns/:id
 Retrieve a single intern
 
-PUT /api/interns/:id  
+PATCH /api/interns/:id
 Update an existing intern
 
-DELETE /api/interns/:id  
+DELETE /api/interns/:id
 Delete an intern record
 
 ### Additional backend capabilities
 
-• Request validation using Mongoose schema rules  
-• Proper HTTP status codes and error responses  
-• Pagination for large datasets  
-• Search and filter support  
+- Request validation using Mongoose schema rules
+- Centralized error handling middleware
+- Proper HTTP status codes and error responses
+- Pagination for large datasets
+- Search by name or email
+- Filter by role and status
 
 ---
 
 # Frontend Features
 
-React based user interface with the following capabilities.
+React based user interface built with Vite.
 
 ## Intern Dashboard
 
-• Display intern list in a structured table  
-• Search interns by name or email  
-• Filter interns by role and status  
-• Pagination for large datasets  
+- Display intern list in a structured table
+- Search interns by name or email
+- Filter interns by role and status
+- Pagination for large datasets
 
 ## Intern Management
 
-• Add new intern via form  
-• Edit existing intern information  
-• Delete intern with confirmation dialog  
+- Add new intern via form with validation
+- Edit existing intern information via inline form
+- Delete intern with confirmation dialog
 
 ## User Experience
 
-• Form validation  
-• Loading indicators during API calls  
-• Error handling and display messages  
+- Form validation with error messages
+- Loading indicators during API calls
+- Error handling and display messages
 
 ---
 
 # Technology Stack
 
 ## Frontend
-React  
-Axios  
-CSS / Basic UI components  
+- React (Vite)
+- Axios
+- CSS
 
 ## Backend
-Node.js  
-Express.js  
-MongoDB  
-Mongoose  
+- Node.js
+- Express.js
+- MongoDB (Local)
+- Mongoose
 
 ## Development Tools
-Git  
-GitHub  
-Postman (API testing)  
+- Git
+- GitHub
+- Nodemon
 
 ---
 
 # Installation Guide
 
 Clone the repository
-
 ```bash
-git clone https://github.com/yourusername/intern-lifecycle-management-system.git
+git clone https://github.com/huzaifa-1502/intern-workflow-management.git
 ```
 
 Navigate to project directory
-
 ```bash
-cd intern-lifecycle-management-system
+cd intern-workflow-management
 ```
 
 Install backend dependencies
-
 ```bash
-cd backend
+cd server
 npm install
 ```
 
 Install frontend dependencies
-
 ```bash
-cd ../frontend
+cd ../client
 npm install
 ```
 
@@ -173,11 +166,10 @@ npm install
 
 # Environment Configuration
 
-Create a `.env` file in the backend folder
-
+Create a `.env` file in the server folder
 ```env
 PORT=5000
-MONGO_URI=your_mongodb_connection_string
+MONGO_URI=mongodb://localhost:27017/interndb
 ```
 
 ---
@@ -185,27 +177,23 @@ MONGO_URI=your_mongodb_connection_string
 # Running the Application
 
 Start backend server
-
 ```bash
-cd backend
+cd server
 npm run dev
 ```
 
 Start frontend
-
 ```bash
-cd frontend
-npm start
+cd client
+npm run dev
 ```
 
 Frontend will run on
-
 ```
-http://localhost:3000
+http://localhost:5173
 ```
 
 Backend API will run on
-
 ```
 http://localhost:5000
 ```
@@ -213,47 +201,35 @@ http://localhost:5000
 ---
 
 # Project Structure
-
 ```
-intern-lifecycle-management-system
-
-backend
- ├── models
- ├── routes
- ├── controllers
- ├── config
- └── server.js
-
-frontend
- ├── components
- ├── pages
- ├── services
- └── App.js
+intern-workflow-management
+│
+├── server
+│   ├── models
+│   │   └── Intern.js
+│   ├── routes
+│   │   └── internRoutes.js
+│   ├── controllers
+│   │   └── internController.js
+│   ├── .env
+│   └── server.js
+│
+├── client
+│   ├── src
+│   │   ├── components
+│   │   │   ├── InternForm.jsx
+│   │   │   └── InternList.jsx
+│   │   ├── App.jsx
+│   │   ├── App.css
+│   │   └── main.jsx
+│   └── vite.config.js
+│
+└── submissions
+    └── SUBMISSION_TEMPLATE.md
 ```
-
----
-
-# Screenshots / Demo
-
-Add screenshots or a demo link here.
-
-Example
-
-• Dashboard View  
-• Add Intern Form  
-• Edit Intern Record  
-
----
-
-# Future Improvements
-
-• Authentication and role based access  
-• Advanced analytics dashboard  
-• Export intern reports  
-• Integration with recruitment platforms  
 
 ---
 
 # Author
 
-Developed as part of a MERN stack engineering assignment demonstrating full stack CRUD system design and implementation.
+Developed by Huzaifa Ahmed as part of a MERN stack engineering assessment demonstrating full stack CRUD system design and implementation.
