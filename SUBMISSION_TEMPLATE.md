@@ -1,53 +1,55 @@
 # Candidate Submission Template
 
 ## Candidate Information
-- Full Name:
-- Email:
-- GitHub Profile Link:
-- Demo Link (if deployed):
-- Submission Date:
+- Full Name: Omer Faisal
+- Email: official.omerfaisal@gmail.com
+- LinkedIn: https://www.linkedin.com/in/omer-faisal-ab382425b/
+- GitHub: https://github.com/Omer-443
+- Submission Date: 2026-03-15
 
 ## Backend (Node + Express)
 
 ### API Endpoints Implemented:
 1. **POST /api/interns**:
-   - [ ] Created intern functionality.
+   - [x] Created intern functionality.
 2. **GET /api/interns**:
-   - [ ] Search/filter/pagination functionality.
+   - [x] Search/filter/pagination functionality.
 3. **GET /api/interns/:id**:
-   - [ ] Fetch single intern.
+   - [x] Fetch single intern.
 4. **PATCH /api/interns/:id**:
-   - [ ] Update intern.
+   - [x] Update intern.
 5. **DELETE /api/interns/:id**:
-   - [ ] Delete intern.
+   - [x] Delete intern.
 
 ### Error Handling
-- [ ] Centralized error middleware implemented.
-- [ ] Handled validation errors, duplicate email, invalid MongoDB ObjectId errors.
+- [x] Centralized error middleware implemented.
+- [x] Handled validation errors, duplicate email, invalid MongoDB ObjectId errors.
 
 ## Frontend (React)
 
 ### Features Implemented:
 1. **Intern List Page**:
-   - [ ] Table with intern data (name, email, role, status, score).
-   - [ ] Search and filter functionality.
-   - [ ] Pagination.
+   - [x] Table with intern data (name, email, role, status, score).
+   - [x] Search and filter functionality.
+   - [x] Pagination.
 2. **Add Intern Form**:
-   - [ ] Form with validation.
-   - [ ] Successful creation adds intern to list.
+   - [x] Form with validation.
+   - [x] Successful creation adds intern to list.
 3. **Edit Intern Form**:
-   - [ ] Inline modal or form for editing.
-   - [ ] Updates refresh the list.
+   - [x] Inline modal or form for editing.
+   - [x] Updates refresh the list.
 4. **Delete Intern**:
-   - [ ] Confirmation dialog for delete.
-   - [ ] Successful delete removes intern from list.
+   - [x] Confirmation dialog for delete.
+   - [x] Successful delete removes intern from list.
 
 ### UX Features:
-- [ ] Loading indicators for API calls.
-- [ ] Error messages from API shown to users.
+- [x] Loading indicators for API calls.
+- [x] Error messages from API shown to users.
 
 ## Assumptions
-- [ ] Assumptions made during development (e.g., handling email uniqueness).
+- [x] Email uniqueness is handled by MongoDB indexing and backend validation.
+- [x] Added `createdAt` column to the dashboard as per requirements.
 
 ## Setup Instructions
-- [ ] Instructions to run both backend and frontend.
+- [x] Backend: Run `npm install` and `npm start` in `backend` folder.
+- [x] Frontend: Run `npm install` and `npm run dev` in `client` folder.
